@@ -29,46 +29,91 @@
         private void InitializeComponent()
         {
             pnlLoginBackGround = new Panel();
+            lblSignUp = new Label();
+            label7 = new Label();
+            label6 = new Label();
             pnllogin = new Panel();
             panel4 = new Panel();
             panel3 = new Panel();
             panel1 = new Panel();
+            lblEmailVerify = new Label();
             label3 = new Label();
             label2 = new Label();
-            linkLabel1 = new LinkLabel();
-            button1 = new Button();
+            lnkForgotPassword = new LinkLabel();
+            btnPassword = new Button();
             panel6 = new Panel();
             panel8 = new Panel();
-            pictureBox2 = new PictureBox();
-            textBox2 = new TextBox();
+            pbxLockPassword = new PictureBox();
+            tbxPassword = new TextBox();
             panel5 = new Panel();
-            panel7 = new Panel();
+            pnlSignalEmail = new Panel();
             pictureBox3 = new PictureBox();
-            textBox1 = new TextBox();
+            tbxEmail = new TextBox();
             label1 = new Label();
             lblEmail = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            label5 = new Label();
+            label4 = new Label();
+            lblSouth = new Label();
             pnlLoginBackGround.SuspendLayout();
             pnllogin.SuspendLayout();
             panel1.SuspendLayout();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxLockPassword).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pnlLoginBackGround
             // 
             pnlLoginBackGround.BackColor = Color.Chocolate;
+            pnlLoginBackGround.Controls.Add(lblSignUp);
+            pnlLoginBackGround.Controls.Add(label7);
+            pnlLoginBackGround.Controls.Add(label6);
             pnlLoginBackGround.Controls.Add(pnllogin);
             pnlLoginBackGround.Dock = DockStyle.Fill;
             pnlLoginBackGround.Location = new Point(0, 0);
             pnlLoginBackGround.Name = "pnlLoginBackGround";
-            pnlLoginBackGround.Size = new Size(1005, 732);
+            pnlLoginBackGround.Size = new Size(1198, 732);
             pnlLoginBackGround.TabIndex = 0;
             pnlLoginBackGround.Paint += pnlLoginBackGround_Paint;
+            // 
+            // lblSignUp
+            // 
+            lblSignUp.AutoSize = true;
+            lblSignUp.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            lblSignUp.ForeColor = Color.White;
+            lblSignUp.Location = new Point(1084, 372);
+            lblSignUp.Name = "lblSignUp";
+            lblSignUp.Size = new Size(53, 23);
+            lblSignUp.TabIndex = 13;
+            lblSignUp.Text = "Here";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(1036, 373);
+            label7.Name = "label7";
+            label7.Size = new Size(199, 22);
+            label7.TabIndex = 12;
+            label7.Text = "Click           to Sign Up";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(1017, 347);
+            label6.Name = "label6";
+            label6.Size = new Size(230, 23);
+            label6.TabIndex = 11;
+            label6.Text = "Don't have an account?";
+            label6.Click += label6_Click;
             // 
             // pnllogin
             // 
@@ -103,10 +148,11 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(lblEmailVerify);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(lnkForgotPassword);
+            panel1.Controls.Add(btnPassword);
             panel1.Controls.Add(panel6);
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(label1);
@@ -118,6 +164,16 @@
             panel1.Size = new Size(573, 589);
             panel1.TabIndex = 0;
             panel1.TabStop = true;
+            // 
+            // lblEmailVerify
+            // 
+            lblEmailVerify.AutoSize = true;
+            lblEmailVerify.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmailVerify.ForeColor = Color.Red;
+            lblEmailVerify.Location = new Point(52, 273);
+            lblEmailVerify.Name = "lblEmailVerify";
+            lblEmailVerify.Size = new Size(0, 17);
+            lblEmailVerify.TabIndex = 10;
             // 
             // label3
             // 
@@ -140,38 +196,39 @@
             label2.TabIndex = 8;
             label2.Text = "Developed by Photon Developers";
             // 
-            // linkLabel1
+            // lnkForgotPassword
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(224, 462);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(137, 21);
-            linkLabel1.TabIndex = 7;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Forgot Password";
+            lnkForgotPassword.AutoSize = true;
+            lnkForgotPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lnkForgotPassword.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkForgotPassword.LinkColor = Color.Black;
+            lnkForgotPassword.Location = new Point(224, 462);
+            lnkForgotPassword.Name = "lnkForgotPassword";
+            lnkForgotPassword.Size = new Size(137, 21);
+            lnkForgotPassword.TabIndex = 7;
+            lnkForgotPassword.TabStop = true;
+            lnkForgotPassword.Text = "Forgot Password";
             // 
-            // button1
+            // btnPassword
             // 
-            button1.BackColor = Color.Chocolate;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(52, 395);
-            button1.Name = "button1";
-            button1.Size = new Size(503, 50);
-            button1.TabIndex = 2;
-            button1.Text = "LOGIN";
-            button1.UseVisualStyleBackColor = false;
+            btnPassword.BackColor = Color.Chocolate;
+            btnPassword.FlatAppearance.BorderSize = 0;
+            btnPassword.FlatStyle = FlatStyle.Flat;
+            btnPassword.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPassword.ForeColor = Color.White;
+            btnPassword.Location = new Point(52, 395);
+            btnPassword.Name = "btnPassword";
+            btnPassword.Size = new Size(503, 50);
+            btnPassword.TabIndex = 2;
+            btnPassword.Text = "LOGIN";
+            btnPassword.UseVisualStyleBackColor = false;
+            btnPassword.Click += btnPassword_Click;
             // 
             // panel6
             // 
             panel6.Controls.Add(panel8);
-            panel6.Controls.Add(pictureBox2);
-            panel6.Controls.Add(textBox2);
+            panel6.Controls.Add(pbxLockPassword);
+            panel6.Controls.Add(tbxPassword);
             panel6.Location = new Point(52, 320);
             panel6.Name = "panel6";
             panel6.Size = new Size(503, 49);
@@ -186,43 +243,44 @@
             panel8.Size = new Size(503, 1);
             panel8.TabIndex = 2;
             // 
-            // pictureBox2
+            // pbxLockPassword
             // 
-            pictureBox2.Image = Properties.Resources.images__1_;
-            pictureBox2.Location = new Point(465, 9);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 30);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            pbxLockPassword.Image = Properties.Resources.images__1_;
+            pbxLockPassword.Location = new Point(465, 9);
+            pbxLockPassword.Name = "pbxLockPassword";
+            pbxLockPassword.Size = new Size(35, 30);
+            pbxLockPassword.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxLockPassword.TabIndex = 1;
+            pbxLockPassword.TabStop = false;
+            pbxLockPassword.Click += pbxLockPassword_Click;
             // 
-            // textBox2
+            // tbxPassword
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(3, 26);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(451, 16);
-            textBox2.TabIndex = 0;
+            tbxPassword.BorderStyle = BorderStyle.None;
+            tbxPassword.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPassword.Location = new Point(3, 26);
+            tbxPassword.Name = "tbxPassword";
+            tbxPassword.Size = new Size(451, 16);
+            tbxPassword.TabIndex = 0;
             // 
             // panel5
             // 
-            panel5.Controls.Add(panel7);
+            panel5.Controls.Add(pnlSignalEmail);
             panel5.Controls.Add(pictureBox3);
-            panel5.Controls.Add(textBox1);
+            panel5.Controls.Add(tbxEmail);
             panel5.Location = new Point(52, 221);
             panel5.Name = "panel5";
             panel5.Size = new Size(503, 49);
             panel5.TabIndex = 5;
             // 
-            // panel7
+            // pnlSignalEmail
             // 
-            panel7.BackColor = Color.Chocolate;
-            panel7.Dock = DockStyle.Bottom;
-            panel7.Location = new Point(0, 48);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(503, 1);
-            panel7.TabIndex = 3;
+            pnlSignalEmail.BackColor = Color.Chocolate;
+            pnlSignalEmail.Dock = DockStyle.Bottom;
+            pnlSignalEmail.Location = new Point(0, 48);
+            pnlSignalEmail.Name = "pnlSignalEmail";
+            pnlSignalEmail.Size = new Size(503, 1);
+            pnlSignalEmail.TabIndex = 3;
             // 
             // pictureBox3
             // 
@@ -234,14 +292,14 @@
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // tbxEmail
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(0, 26);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(459, 16);
-            textBox1.TabIndex = 0;
+            tbxEmail.BorderStyle = BorderStyle.None;
+            tbxEmail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxEmail.Location = new Point(0, 26);
+            tbxEmail.Name = "tbxEmail";
+            tbxEmail.Size = new Size(459, 16);
+            tbxEmail.TabIndex = 0;
             // 
             // label1
             // 
@@ -276,31 +334,70 @@
             // panel2
             // 
             panel2.BackColor = Color.SaddleBrown;
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(lblSouth);
             panel2.Location = new Point(109, 15);
             panel2.Name = "panel2";
             panel2.Size = new Size(446, 85);
             panel2.TabIndex = 0;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(104, 52);
+            label5.Name = "label5";
+            label5.Size = new Size(261, 20);
+            label5.TabIndex = 11;
+            label5.Text = "| Official Information and Services";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(25, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 23);
+            label4.TabIndex = 10;
+            label4.Text = "gov.za";
+            // 
+            // lblSouth
+            // 
+            lblSouth.AutoSize = true;
+            lblSouth.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSouth.ForeColor = Color.White;
+            lblSouth.Location = new Point(40, 10);
+            lblSouth.Name = "lblSouth";
+            lblSouth.Size = new Size(316, 28);
+            lblSouth.TabIndex = 10;
+            lblSouth.Text = "South African Government";
+            // 
             // frmLoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 732);
+            ClientSize = new Size(1198, 732);
             Controls.Add(pnlLoginBackGround);
             Name = "frmLoginPage";
             Load += Form1_Load;
             pnlLoginBackGround.ResumeLayout(false);
+            pnlLoginBackGround.PerformLayout();
             pnllogin.ResumeLayout(false);
             pnllogin.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxLockPassword).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -315,17 +412,24 @@
         private PictureBox pictureBox1;
         private Label lblEmail;
         private Panel panel6;
-        private TextBox textBox2;
+        private TextBox tbxPassword;
         private Panel panel5;
-        private TextBox textBox1;
+        private TextBox tbxEmail;
         private Label label1;
-        private PictureBox pictureBox2;
+        private PictureBox pbxLockPassword;
         private PictureBox pictureBox3;
-        private Button button1;
-        private Panel panel7;
+        private Button btnPassword;
+        private Panel pnlSignalEmail;
         private Panel panel8;
-        private LinkLabel linkLabel1;
+        private LinkLabel lnkForgotPassword;
         private Label label2;
         private Label label3;
+        private Label label5;
+        private Label label4;
+        private Label lblSouth;
+        private Label label6;
+        private Label lblSignUp;
+        private Label label7;
+        private Label lblEmailVerify;
     }
 }
