@@ -55,6 +55,7 @@
             panel8 = new Panel();
             panel7 = new Panel();
             panel1 = new Panel();
+            pictureBox6 = new PictureBox();
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
             panel4 = new Panel();
@@ -64,7 +65,6 @@
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
-            pictureBox6 = new PictureBox();
             pnlFirstPage.SuspendLayout();
             panel6.SuspendLayout();
             panel11.SuspendLayout();
@@ -73,12 +73,12 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // pnlFirstPage
@@ -376,6 +376,16 @@
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.Screenshot_2026_09_08_222902;
+            pictureBox6.Location = new Point(349, 171);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(203, 276);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 2;
+            pictureBox6.TabStop = false;
+            // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources._142014;
@@ -468,16 +478,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = Properties.Resources.Screenshot_2026_09_08_222902;
-            pictureBox6.Location = new Point(356, 170);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(193, 309);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 2;
-            pictureBox6.TabStop = false;
-            // 
             // frmSignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -497,13 +497,13 @@
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
