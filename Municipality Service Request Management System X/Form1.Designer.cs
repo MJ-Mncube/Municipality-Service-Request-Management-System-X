@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pnlLoginBackGround = new Panel();
-            lblSignUp = new Label();
+            lnkSignUp = new LinkLabel();
             label7 = new Label();
             label6 = new Label();
             pnllogin = new Panel();
@@ -56,6 +56,10 @@
             label5 = new Label();
             label4 = new Label();
             lblSouth = new Label();
+            pictureBox2 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            panel7 = new Panel();
+            panel9 = new Panel();
             pnlLoginBackGround.SuspendLayout();
             pnllogin.SuspendLayout();
             panel1.SuspendLayout();
@@ -65,15 +69,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // pnlLoginBackGround
             // 
             pnlLoginBackGround.BackColor = Color.Chocolate;
-            pnlLoginBackGround.Controls.Add(lblSignUp);
+            pnlLoginBackGround.Controls.Add(lnkSignUp);
             pnlLoginBackGround.Controls.Add(label7);
             pnlLoginBackGround.Controls.Add(label6);
             pnlLoginBackGround.Controls.Add(pnllogin);
+            pnlLoginBackGround.Controls.Add(pictureBox4);
             pnlLoginBackGround.Dock = DockStyle.Fill;
             pnlLoginBackGround.Location = new Point(0, 0);
             pnlLoginBackGround.Name = "pnlLoginBackGround";
@@ -81,20 +88,25 @@
             pnlLoginBackGround.TabIndex = 0;
             pnlLoginBackGround.Paint += pnlLoginBackGround_Paint;
             // 
-            // lblSignUp
+            // lnkSignUp
             // 
-            lblSignUp.AutoSize = true;
-            lblSignUp.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblSignUp.ForeColor = Color.White;
-            lblSignUp.Location = new Point(1084, 372);
-            lblSignUp.Name = "lblSignUp";
-            lblSignUp.Size = new Size(53, 23);
-            lblSignUp.TabIndex = 13;
-            lblSignUp.Text = "Here";
+            lnkSignUp.ActiveLinkColor = Color.LightGray;
+            lnkSignUp.AutoSize = true;
+            lnkSignUp.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold | FontStyle.Underline);
+            lnkSignUp.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkSignUp.LinkColor = Color.FromArgb(224, 224, 224);
+            lnkSignUp.Location = new Point(1085, 373);
+            lnkSignUp.Name = "lnkSignUp";
+            lnkSignUp.Size = new Size(53, 23);
+            lnkSignUp.TabIndex = 1;
+            lnkSignUp.TabStop = true;
+            lnkSignUp.Text = "Here";
+            lnkSignUp.LinkClicked += lnkSignUp_LinkClicked;
             // 
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.White;
             label7.Location = new Point(1036, 373);
@@ -106,6 +118,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
             label6.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
             label6.Location = new Point(1017, 347);
@@ -117,9 +130,12 @@
             // 
             // pnllogin
             // 
+            pnllogin.Controls.Add(panel7);
+            pnllogin.Controls.Add(panel9);
             pnllogin.Controls.Add(panel4);
             pnllogin.Controls.Add(panel3);
             pnllogin.Controls.Add(panel1);
+            pnllogin.Controls.Add(pictureBox2);
             pnllogin.Dock = DockStyle.Left;
             pnllogin.Location = new Point(0, 0);
             pnllogin.Name = "pnllogin";
@@ -159,9 +175,9 @@
             panel1.Controls.Add(lblEmail);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(97, 53);
+            panel1.Location = new Point(92, 53);
             panel1.Name = "panel1";
-            panel1.Size = new Size(573, 589);
+            panel1.Size = new Size(578, 582);
             panel1.TabIndex = 0;
             panel1.TabStop = true;
             // 
@@ -184,6 +200,7 @@
             label3.Size = new Size(214, 22);
             label3.TabIndex = 9;
             label3.Text = "Welcome Back Citizien";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -198,6 +215,7 @@
             // 
             // lnkForgotPassword
             // 
+            lnkForgotPassword.ActiveLinkColor = Color.DarkGray;
             lnkForgotPassword.AutoSize = true;
             lnkForgotPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnkForgotPassword.LinkBehavior = LinkBehavior.HoverUnderline;
@@ -260,6 +278,7 @@
             tbxPassword.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbxPassword.Location = new Point(3, 26);
             tbxPassword.Name = "tbxPassword";
+            tbxPassword.PasswordChar = '●';
             tbxPassword.Size = new Size(451, 16);
             tbxPassword.TabIndex = 0;
             // 
@@ -315,7 +334,7 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(52, 197);
+            lblEmail.Location = new Point(55, 197);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(51, 21);
             lblEmail.TabIndex = 3;
@@ -375,6 +394,46 @@
             lblSouth.TabIndex = 10;
             lblSouth.Text = "South African Government";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = Properties.Resources.Orange_and_White_Modern_Minimalist_Pitch_Deck_Presentation;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(826, 732);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Dock = DockStyle.Fill;
+            pictureBox4.Image = Properties.Resources.Orange_and_White_Modern_Minimalist_Pitch_Deck_Presentation;
+            pictureBox4.Location = new Point(0, 0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(1198, 732);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(71, 53);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(14, 582);
+            panel7.TabIndex = 16;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.White;
+            panel9.Location = new Point(51, 53);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(14, 582);
+            panel9.TabIndex = 15;
+            // 
             // frmLoginPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -398,6 +457,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -428,8 +489,12 @@
         private Label label4;
         private Label lblSouth;
         private Label label6;
-        private Label lblSignUp;
         private Label label7;
         private Label lblEmailVerify;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox4;
+        private LinkLabel lnkSignUp;
+        private Panel panel7;
+        private Panel panel9;
     }
 }

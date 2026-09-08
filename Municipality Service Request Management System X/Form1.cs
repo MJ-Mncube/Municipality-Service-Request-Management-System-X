@@ -59,9 +59,32 @@ namespace Municipality_Service_Request_Management_System_X
                 tbxPassword.PasswordChar = '●';
             }
             else if (tbxPassword.PasswordChar == '●')
-            { 
-             tbxPassword.PasswordChar = '\0';
+            {
+                tbxPassword.PasswordChar = '\0';
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Navigate from login to sign up
+            frmSignUp frmSignUp = new frmSignUp();
+            frmSignUp.Show();
+            this.Hide();
         }
     }
 }
