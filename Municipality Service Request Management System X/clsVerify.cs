@@ -1,50 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Schema;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Municipality_Service_Request_Management_System_X
 {
     public class clsVerify///Class we will use to verify details
     {
-        ///////Simamukele Mncube
+        
 
-        public string VerifyEmail(string Email)
+        public string VerifyEmail(string Email)//verifying email
         {
-            if (Email == "" || Email == null)
+            if (string.IsNullOrEmpty(Email))
             {
                 return "Enter Email";
-
             }
-            else if (!Email.Contains("@") || !Email.Contains("."))
+            else if (!Regex.IsMatch(
+                Email,
+                @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"))//using regex because contains is breachable
             {
                 return "Invalid Email";
-
             }
             return "";
         }
-        /*Details that can be obtained from ID
-         * Date of birth (Age)1-6th Digit (DONE)
-         * Gender 7-10th Digit (0000-4999 FeMale)(5000-9999 male)
-         * Race 11-12th Digit (00-09 Black)(10-19 White)(20-29 Coloured)(30-39 Indian)(40-49 Asian)(50-59 Other)
-         * Last digit is to verify validity
-         */
-        public string VerifyID(string ID)
+      
+        public string VerifyID(string ID)//verifying ID
         {
-            if (ID == "" || (ID == null))
+            //reading from user ID
+           
+           
+            if (string.IsNullOrEmpty(ID))
             {
                 return "Enter your ID number";
             }
-            if (ID.Length != 13)
+            int month = Convert.ToInt32(ID.Substring(2, 2));
+            int day = Convert.ToInt32(ID.Substring(4, 2));
+            if (!Regex.IsMatch(ID, @"^\d{13}$")
+                ||(day>31)
+                ||(month>12))
             {
                 return "Invalid ID number";
             }
             return "";
-
-        }//After verfiying 
+        }//After verfiying extract details
+          /*Details that can be obtained from ID
+         * Date of birth(Age)1-6th Digit(DONE)
+         * Gender 7-10th Digit(0000-4999 FeMale)(5000-9999 male)
+         * Race 11-12th Digit(00-09 Black)(10-19 White)(20-29 Coloured)(30-39 Indian)(40-49 Asian)(50-59 Other)
+         * Last digit is to verify validity(Missing the Luhn method)
+         */
         public int AgeID(string ID)///////////////Capture Age
         {
             
@@ -146,7 +158,41 @@ namespace Municipality_Service_Request_Management_System_X
 
 
 
+        }
+        public string VerifyPhone(string Phone)//Verifying Phone number
+        {
+            if (string.IsNullOrEmpty(Phone))
+            {
+                return "Enter Phone Number";
+            }
+
+            // Clean up THE spaxes in between
+            string cleaned = Phone.Replace(" ", "");
+               
+
+            // Convert formT so user can write starting with 0 or +27
+            if (cleaned.StartsWith("0"))
+            {
+                cleaned = "+27" + cleaned.Substring(1);
+            }
+
+            if (!Regex.IsMatch(cleaned, @"^\+27[0-9]{9}$"))
+            {
+                return "Invalid Phone Number";
+            }
+
+            return "";
         }//Changed entry of ID into string because the ID number is too long to be stored as an integer
+
+        //Checking if a field is empty
+        public string emptyCheck(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return "Field cannot be empty";
+            }
+            return "";
+        }
 
 
 
