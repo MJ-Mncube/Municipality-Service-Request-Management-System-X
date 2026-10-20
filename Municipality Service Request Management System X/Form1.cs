@@ -1,5 +1,6 @@
 //LOGIN PAGE
 using static System.Windows.Forms.LinkLabel;
+using Microsoft.VisualBasic;
 
 namespace Municipality_Service_Request_Management_System_X
 {
@@ -61,7 +62,7 @@ namespace Municipality_Service_Request_Management_System_X
                 lblWpassword.Text = "Please enter a password";
                 return;
             }
-            if(string.IsNullOrEmpty(inputEmail))
+            if (string.IsNullOrEmpty(inputEmail))
             {
                 lblEmailVerify.Text = "Please enter an email";
                 return;
@@ -86,18 +87,18 @@ namespace Municipality_Service_Request_Management_System_X
                     if (email.Equals(inputEmail))
                     {
                         emailFound = true;
-                       // pnlSignalEmail.BackColor = Color.Red;
+                        // pnlSignalEmail.BackColor = Color.Red;
 
                         if (Password.Equals(inputPassword))
                         {
                             loginCorrect = true;
-                          //  pnlPass.BackColor = Color.Green;
+                            //  pnlPass.BackColor = Color.Green;
                         }
                         else
                         {
 
 
-                           // pnlPass.BackColor = Color.Red;
+                            // pnlPass.BackColor = Color.Red;
                             lblWpassword.Text = "Incorrect Password and/or Email";
 
                         }
@@ -111,20 +112,20 @@ namespace Municipality_Service_Request_Management_System_X
             if (!emailFound)
             {
                 lblWpassword.Text = "Incorrect Password and/or Email";
-               // pnlSignalEmail.BackColor = Color.Red;
+                // pnlSignalEmail.BackColor = Color.Red;
             }
             // Login successful
             if (loginCorrect)
             {
+                // SAVE THE EMAIL HERE!
+                UserSession.LoggedInEmail = inputEmail;
+
                 MainPage_1_ MainPage = new MainPage_1_();
                 MainPage.Show();
                 this.Hide();
             }
-            tbxEmail.Clear();
-            tbxPassword.Clear();
-
-            
-        }//end of btnPassword_Click
+           
+        }
 
         private void pbxLockPassword_Click(object sender, EventArgs e)
         {
@@ -177,17 +178,17 @@ namespace Municipality_Service_Request_Management_System_X
             lblEmailVerify.Text = sResult;
 
             //////Color indicator for email verification
-            if (sResult.Contains("Email") || (objVerify.emptyCheck(tbxPassword.Text) != "") )
+            if (sResult.Contains("Email") || (objVerify.emptyCheck(tbxPassword.Text) != ""))
             {
                 pnlSignalEmail.BackColor = Color.Red;
                 pnlPass.BackColor = Color.Red;
             }
-            else if ((objVerify.emptyCheck(tbxEmail.Text) == "")|| sResult == "")
+            else if ((objVerify.emptyCheck(tbxEmail.Text) == "") || sResult == "")
             {
                 pnlSignalEmail.BackColor = Color.Green;
                 pnlPass.BackColor = Color.Green;
             }
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -207,19 +208,17 @@ namespace Municipality_Service_Request_Management_System_X
              */
 
 
-            //clear text
-            tbxPassword.Clear();
-            tbxEmail.Clear();
+            //SM0708|Simamkele|Mncube|19|Male|Black|simamkelemncube@gmail.com|0708296350083|0760458770|Mzilankatha (sample textfile)
 
             string email = tbxEmail.Text;
-            string newPassword = tbxPassword.Text;
+            string Password = tbxPassword.Text;
 
-            //Change instruction
-            lblEmail.Text = "Enter Email";
+            string confirmEmail = Interaction.InputBox("Enter your email ", "Email address");
 
             //Verify email and Check if email exists
-            if ((objVerify.VerifyEmail(email) != "") || objVerify.emptyCheck(email) != "")
+            if ((objVerify.VerifyEmail(confirmEmail) != ""))
             {
+                MessageBox.Show("Invalid email address");
                 return;
             }
 
@@ -229,8 +228,6 @@ namespace Municipality_Service_Request_Management_System_X
 
             string searchEmail = "";
 
-
-
             for (int i = 0; i < line.Length; i++)
             {
                 string[] lineArray = line[i].Split('|');
@@ -239,39 +236,67 @@ namespace Municipality_Service_Request_Management_System_X
                     continue;
                 }
                 searchEmail = lineArray[6];
-                if (email != searchEmail)
+                if (searchEmail.Equals(confirmEmail, StringComparison.OrdinalIgnoreCase))
                 {
-                    lblEmailVerify.Text = "Email not found!";
-                    return;
-                }
-                else
-                {
-                    //change instruction
-                    lblPass.Text = "Enter new Password";
-
-
-                    lineArray[6] = newPassword;
-                    line[i] = string.Join("|", lineArray);
                     bfound = true;
-                    break;
 
+                    // Prompt for new password
+                    string newPassword = Interaction.InputBox("Enter your new password", "Change Password");
+
+                    // Confirmation dialog
+                    DialogResult dialogue = MessageBox.Show(
+                        "Are you sure you want to change your password?",
+                        "Confirm change",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    switch (dialogue)
+                    {
+                        case DialogResult.Yes:
+                            lineArray[9] = newPassword;
+
+                            // Rebuild the line string
+                            line[i] = string.Join("|", lineArray);
+
+                            // CRITICAL: Save the updated lines back to the text file!
+                            File.WriteAllLines(filepath, line);
+
+                            MessageBox.Show("Password updated successfully!");
+                            break;
+
+                        case DialogResult.No:
+                            MessageBox.Show("Password change cancelled.");
+                            break;
+                    }
+
+                    break; // Stop searching once we found and processed the user
                 }
+            }
 
-
-
+            // If the loop finishes and bfound is still false, the email wasn't in the file
+            if (!bfound)
+            {
+                MessageBox.Show("Email not found");
             }
 
 
-
-
-
         }
+
+
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             formUsers users = new formUsers();
             users.Show();
             this.Hide();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

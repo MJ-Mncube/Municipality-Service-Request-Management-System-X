@@ -1,0 +1,38 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-5743
+DATE LOGGED:		21 Oct 2026, 01:26
+STATUS:			Assigned Request
+PRIORITY:		High Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Nolwandle Ntshangase
+CONTACT NO:		0730759781
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		21 Gillespie Str
+SUBURB:			South Beach
+NEAREST LANDMARK:	Egagasini
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Water, Environment, Public Safety, Health and Social Security, Sanitation and Waste
+ISSUE TYPE:		Cable TheftClinic Service ComplaintContaminated WaterDisaster Relief RequestDisorderly ConductEnvironmental Health HazardGang Activity HotspotIllegal DumpingIllegal Electricity ConnectionIllegal Land InvasionLow Water PressureNo Water SupplyPest InfestationPollutionTransformer FaultTree MaintenanceUnsafe FoodVandalism of Public PropertyWater Leak
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[01:26] 	Request Logged       | COMPLETE
+[23 Oct, 01:26] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+
+==========================================================
+                END OF REPORT                             
+==========================================================

@@ -29,6 +29,9 @@ namespace Municipality_Service_Request_Management_System_X
 
         private void button3_Click(object sender, EventArgs e)
         {
+            frmLoginPage MainPage = new frmLoginPage();
+            MainPage.Show();
+            this.Hide();
 
         }
 
@@ -273,5 +276,6 @@ namespace Municipality_Service_Request_Management_System_X
         {
 
         }
+        
     }
 }

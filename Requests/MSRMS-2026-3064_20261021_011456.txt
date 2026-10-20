@@ -1,0 +1,38 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-3064
+DATE LOGGED:		21 Oct 2026, 01:14
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		Gillespies street
+SUBURB:			Glenwood
+NEAREST LANDMARK:	Sastri College
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Public Safety, Sanitation and Waste
+ISSUE TYPE:		Illegal DumpingVandalism of Public Property
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[01:14] 	Request Logged       | COMPLETE
+[23 Oct, 01:14] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+
+==========================================================
+                END OF REPORT                             
+==========================================================

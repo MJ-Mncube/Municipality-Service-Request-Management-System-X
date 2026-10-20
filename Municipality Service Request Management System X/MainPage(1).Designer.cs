@@ -56,9 +56,8 @@
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             lblSouth = new Label();
-            lblIdentify = new Label();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             sidebar.SuspendLayout();
             pnlmenu.SuspendLayout();
@@ -74,7 +73,7 @@
             pnlSettings.SuspendLayout();
             pnlExit.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -92,7 +91,7 @@
             sidebar.ForeColor = SystemColors.ControlText;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(196, 450);
+            sidebar.Size = new Size(41, 450);
             sidebar.TabIndex = 0;
             sidebar.Paint += flowLayoutPanel1_Paint;
             // 
@@ -388,49 +387,35 @@
             // panel1
             // 
             panel1.BackColor = Color.Chocolate;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblSouth);
-            panel1.Controls.Add(lblIdentify);
-            panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(196, 0);
+            panel1.Location = new Point(41, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(751, 57);
+            panel1.Size = new Size(1008, 57);
             panel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.images1;
+            pictureBox1.Location = new Point(905, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 58);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // lblSouth
             // 
             lblSouth.AutoSize = true;
             lblSouth.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSouth.ForeColor = Color.White;
-            lblSouth.Location = new Point(139, 18);
+            lblSouth.Location = new Point(75, 18);
             lblSouth.Name = "lblSouth";
-            lblSouth.Size = new Size(193, 28);
+            lblSouth.Size = new Size(137, 28);
             lblSouth.TabIndex = 12;
-            lblSouth.Text = "New Complaint";
-            // 
-            // lblIdentify
-            // 
-            lblIdentify.AutoSize = true;
-            lblIdentify.BackColor = Color.Chocolate;
-            lblIdentify.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIdentify.ForeColor = Color.White;
-            lblIdentify.Location = new Point(75, 16);
-            lblIdentify.Name = "lblIdentify";
-            lblIdentify.Size = new Size(33, 21);
-            lblIdentify.TabIndex = 4;
-            lblIdentify.Text = "SM";
-            lblIdentify.Click += label1_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.oval__2_;
-            pictureBox4.Location = new Point(62, 6);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(59, 46);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
+            lblSouth.Text = "Main Page";
             // 
             // pictureBox3
             // 
@@ -445,7 +430,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(947, 450);
+            ClientSize = new Size(1049, 450);
             Controls.Add(panel1);
             Controls.Add(sidebar);
             IsMdiContainer = true;
@@ -467,7 +452,7 @@
             pnlExit.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
@@ -500,9 +485,8 @@
         private Button btnHam;
         private System.Windows.Forms.Timer sidebarTransition;
         private Panel panel1;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
-        public Label lblIdentify;//CHANGED TO PUBLIC SO THAT IT CAN BE ACCESSED FROM OTHER FORMS
         private Label lblSouth;
+        private PictureBox pictureBox1;
     }
 }
