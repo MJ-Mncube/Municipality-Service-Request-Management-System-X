@@ -1,0 +1,38 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-6812
+DATE LOGGED:		21 Oct 2026, 11:28
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		ugjghjg
+SUBURB:			ujugjh
+NEAREST LANDMARK:	ghfggf
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Water, Environment, Health and Social Security, Sanitation and Waste
+ISSUE TYPE:		Clinic Service ComplaintContaminated WaterDamaged Manhole CoverDead Animal RemovalDisaster Relief RequestIllegal DumpingIllegal Land InvasionLow Water PressureMeter FaultMissed Refuse CollectionNo Water SupplyOvergrown Grass or VergesPest InfestationPublic Toilet MaintenanceTanker Accessibility IssueTree MaintenanceUnsafe FoodWater Leak
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[11:28] 	Request Logged       | COMPLETE
+[23 Oct, 11:28] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+
+==========================================================
+                END OF REPORT                             
+==========================================================

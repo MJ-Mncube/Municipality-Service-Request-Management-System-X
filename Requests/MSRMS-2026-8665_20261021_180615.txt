@@ -1,0 +1,39 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-8665
+DATE LOGGED:		21 Oct 2026, 18:06
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		gfhfhfghfg
+SUBURB:			ghfhghfg
+NEAREST LANDMARK:	eydhddfgd
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Public Safety, Health and Social Security
+ISSUE TYPE:		Disaster Relief RequestIllegal Electricity ConnectionPower Surges
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[18:06] 	Request Logged       | COMPLETE
+[23 Oct, 18:06] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+PHOTO ATTACHED:	
+
+==========================================================
+                END OF REPORT                             
+==========================================================

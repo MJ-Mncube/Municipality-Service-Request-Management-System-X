@@ -117,8 +117,9 @@
             btnPrevious = new Button();
             pnlContainer2 = new Panel();
             panel24 = new Panel();
+            pbxQuery = new PictureBox();
             panel25 = new Panel();
-            label10 = new Label();
+            linkLabel1 = new LinkLabel();
             pictureBox4 = new PictureBox();
             groupBox4 = new GroupBox();
             cbxChildren = new CheckBox();
@@ -149,6 +150,7 @@
             lblInstruct = new Label();
             btnSubmit = new Button();
             btnMakeChanges = new Button();
+            btnConfirm = new Button();
             pnlContainer.SuspendLayout();
             panel17.SuspendLayout();
             panel19.SuspendLayout();
@@ -175,6 +177,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             pnlContainer2.SuspendLayout();
             panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxQuery).BeginInit();
             panel25.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             groupBox4.SuspendLayout();
@@ -207,6 +210,7 @@
             pnlContainer.Name = "pnlContainer";
             pnlContainer.Size = new Size(1278, 444);
             pnlContainer.TabIndex = 3;
+            pnlContainer.Paint += pnlContainer_Paint;
             // 
             // panel17
             // 
@@ -1189,9 +1193,9 @@
             btnContinue.ForeColor = Color.White;
             btnContinue.Image = Properties.Resources.right_arrow__1_;
             btnContinue.ImageAlign = ContentAlignment.MiddleRight;
-            btnContinue.Location = new Point(1154, 591);
+            btnContinue.Location = new Point(1132, 565);
             btnContinue.Name = "btnContinue";
-            btnContinue.Size = new Size(129, 41);
+            btnContinue.Size = new Size(158, 41);
             btnContinue.TabIndex = 4;
             btnContinue.Text = "Continue";
             btnContinue.UseVisualStyleBackColor = false;
@@ -1206,7 +1210,7 @@
             btnPrevious.ImageAlign = ContentAlignment.MiddleLeft;
             btnPrevious.Location = new Point(24, 569);
             btnPrevious.Name = "btnPrevious";
-            btnPrevious.Size = new Size(129, 41);
+            btnPrevious.Size = new Size(164, 41);
             btnPrevious.TabIndex = 5;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = false;
@@ -1237,31 +1241,44 @@
             // panel24
             // 
             panel24.BackColor = Color.DimGray;
+            panel24.Controls.Add(pbxQuery);
             panel24.Controls.Add(panel25);
             panel24.Location = new Point(606, 396);
             panel24.Name = "panel24";
-            panel24.Size = new Size(500, 94);
+            panel24.Size = new Size(500, 145);
             panel24.TabIndex = 27;
+            // 
+            // pbxQuery
+            // 
+            pbxQuery.Location = new Point(6, 41);
+            pbxQuery.Name = "pbxQuery";
+            pbxQuery.Size = new Size(488, 98);
+            pbxQuery.SizeMode = PictureBoxSizeMode.Zoom;
+            pbxQuery.TabIndex = 21;
+            pbxQuery.TabStop = false;
             // 
             // panel25
             // 
             panel25.BackColor = Color.White;
-            panel25.Controls.Add(label10);
+            panel25.Controls.Add(linkLabel1);
             panel25.Controls.Add(pictureBox4);
             panel25.Location = new Point(3, 3);
             panel25.Name = "panel25";
             panel25.Size = new Size(494, 32);
             panel25.TabIndex = 29;
             // 
-            // label10
+            // linkLabel1
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(0, 6);
-            label10.Name = "label10";
-            label10.Size = new Size(134, 21);
-            label10.TabIndex = 26;
-            label10.Text = "Upload a photo";
+            linkLabel1.AutoSize = true;
+            linkLabel1.Cursor = Cursors.Hand;
+            linkLabel1.Font = new Font("Century Gothic", 12F);
+            linkLabel1.Location = new Point(3, 7);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(134, 21);
+            linkLabel1.TabIndex = 29;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Upload a photo";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // pictureBox4
             // 
@@ -1574,7 +1591,7 @@
             btnSubmit.ForeColor = Color.White;
             btnSubmit.Image = Properties.Resources.check_box;
             btnSubmit.ImageAlign = ContentAlignment.MiddleRight;
-            btnSubmit.Location = new Point(1109, 592);
+            btnSubmit.Location = new Point(1132, 565);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(158, 41);
             btnSubmit.TabIndex = 17;
@@ -1599,12 +1616,29 @@
             btnMakeChanges.Visible = false;
             btnMakeChanges.Click += btnMakeChanges_Click;
             // 
+            // btnConfirm
+            // 
+            btnConfirm.BackColor = Color.Chocolate;
+            btnConfirm.FlatStyle = FlatStyle.Flat;
+            btnConfirm.ForeColor = Color.White;
+            btnConfirm.Image = Properties.Resources.check_box;
+            btnConfirm.ImageAlign = ContentAlignment.MiddleRight;
+            btnConfirm.Location = new Point(1132, 565);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(158, 41);
+            btnConfirm.TabIndex = 20;
+            btnConfirm.Text = "Confirm";
+            btnConfirm.UseVisualStyleBackColor = false;
+            btnConfirm.Visible = false;
+            btnConfirm.Click += button1_Click_2;
+            // 
             // formRequest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1302, 700);
+            Controls.Add(btnConfirm);
             Controls.Add(btnMakeChanges);
             Controls.Add(btnSubmit);
             Controls.Add(lblInstruct);
@@ -1661,6 +1695,7 @@
             pnlContainer2.ResumeLayout(false);
             pnlContainer2.PerformLayout();
             panel24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbxQuery).EndInit();
             panel25.ResumeLayout(false);
             panel25.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -1783,7 +1818,6 @@
         private RadioButton rbtEmergency1;
         private RadioButton rbtReoccuring3;
         private GroupBox groupBox4;
-        private Label label10;
         private Panel panel24;
         private Panel panel25;
         private PictureBox pictureBox4;
@@ -1804,5 +1838,8 @@
         private Label label11;
         private PictureBox pictureBox10;
         private Button btnMakeChanges;
+        private Button btnConfirm;
+        private LinkLabel linkLabel1;
+        private PictureBox pbxQuery;
     }
 }

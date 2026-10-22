@@ -785,6 +785,7 @@
             ClientSize = new Size(1369, 726);
             Controls.Add(pnlFirstPage);
             Name = "frmSignUp";
+            WindowState = FormWindowState.Maximized;
             pnlFirstPage.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();

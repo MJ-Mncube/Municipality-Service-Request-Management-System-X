@@ -81,6 +81,7 @@ namespace Municipality_Service_Request_Management_System_X
                     sb.AppendLine($"[{ev.Time}] \t{ev.Title.PadRight(20)} | {ev.Status}");
               
                 }
+                sb.AppendLine($"PHOTO ATTACHED:\t{request.PhotoFilePath}");
 
                 sb.AppendLine();
                 sb.AppendLine("==========================================================");

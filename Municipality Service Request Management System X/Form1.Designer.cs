@@ -477,6 +477,7 @@
             ClientSize = new Size(1198, 732);
             Controls.Add(pnlLoginBackGround);
             Name = "frmLoginPage";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             pnlLoginBackGround.ResumeLayout(false);
             pnlLoginBackGround.PerformLayout();

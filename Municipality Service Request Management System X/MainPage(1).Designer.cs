@@ -91,7 +91,7 @@
             sidebar.ForeColor = SystemColors.ControlText;
             sidebar.Location = new Point(0, 0);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(41, 450);
+            sidebar.Size = new Size(196, 450);
             sidebar.TabIndex = 0;
             sidebar.Paint += flowLayoutPanel1_Paint;
             // 
@@ -391,9 +391,9 @@
             panel1.Controls.Add(lblSouth);
             panel1.Controls.Add(pictureBox3);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(41, 0);
+            panel1.Location = new Point(196, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1008, 57);
+            panel1.Size = new Size(853, 57);
             panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -436,6 +436,7 @@
             IsMdiContainer = true;
             Name = "MainPage_1_";
             Text = "Municipality Service Request Management System";
+            WindowState = FormWindowState.Maximized;
             Load += MainPage_1__Load;
             sidebar.ResumeLayout(false);
             pnlmenu.ResumeLayout(false);

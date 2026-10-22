@@ -18,6 +18,7 @@ namespace Municipality_Service_Request_Management_System_X
     {
         private string _loggedInEmail;
         private UserDetails _currentUser;
+        private MunicipalServiceRequest _currentRequest;
 
         private void AutoFillUserDetails()
         {
@@ -52,12 +53,14 @@ namespace Municipality_Service_Request_Management_System_X
 
             _loggedInEmail = emailFromLogin;
 
+
             // 3. Automatically fetch and fill the user details when the form opens
             AutoFillUserDetails();
         }
         public formRequest()
         {
             InitializeComponent();
+            _currentRequest = new MunicipalServiceRequest();
             AutoFillUserDetails();
 
         }
@@ -66,6 +69,7 @@ namespace Municipality_Service_Request_Management_System_X
         {
             showButton();
             count();
+            progress();
             // 2. Recursively find and hook up ALL checkboxes and textboxes, even if nested
             HookUpEvents(pnlContainer);
 
@@ -106,7 +110,7 @@ namespace Municipality_Service_Request_Management_System_X
             lblInstruct.Text = "Enter details on the provided fields.The options that are written 'optional' are not compulsory.";
             btnContinue.Visible = false;
             btnSubmit.Visible = true;
-           
+
         }
 
         private void lblSouth_Click(object sender, EventArgs e)
@@ -212,6 +216,7 @@ namespace Municipality_Service_Request_Management_System_X
         {
             showButton();
             count();
+            progress();
         }
 
         private void panel22_Paint(object sender, PaintEventArgs e)
@@ -229,7 +234,10 @@ namespace Municipality_Service_Request_Management_System_X
             pnlContainer.Visible = true;
             pnlContainer2.Visible = false;
             btnPrevious.Visible = false;
+            btnContinue.Visible = true;
             lblInstruct.Text = "Select or enter complaint.You may select more than 1 complaint for your request.";
+            progressBar.Value = 33;
+            btnSubmit.Visible = false;
         }
 
         private void progressBar_Click(object sender, EventArgs e)
@@ -372,7 +380,7 @@ namespace Municipality_Service_Request_Management_System_X
 
             IssueType1 = issueType();
             string selectedCategories = GetCategories();
-            var request = new MunicipalServiceRequest
+            _currentRequest = new MunicipalServiceRequest
             {
                 ReferenceNumber = $"MSRMS-2026-{new Random().Next(1000, 9999)}",
                 DateLogged = DateTime.Now,
@@ -395,28 +403,11 @@ namespace Municipality_Service_Request_Management_System_X
                         new TimelineEvent { Time = "Pending", Title = "Resolved", Status = "PENDING" }
               }
             };
+            Details();
+            progress();
+            DisplayRequestReport(_currentRequest);
 
-            // 2. Define where to save the text files (e.g., a folder on the C: drive)
-            string saveFolder = @"C:\Users\User\Desktop\Photon Developers\Municipality Service Request Management System X\Requests";
 
-            // 3. Create the generator and save the file
-            try
-            {
-                RequestFileGenerator generator = new RequestFileGenerator(saveFolder);
-                generator.SaveRequestToFile(request);
-
-                MessageBox.Show($"Request saved successfully!\n\nOpen this folder to view it:\n{saveFolder}", "Success");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Saving");
-            }
-            DisplayRequestReport(request);
-            lblInstruct.Text = "If you are satisfied with the details of your request, press Confirm.";
-            pnlSampleReport.Visible = true;
-            pnlContainer.Visible = false;
-            pnlContainer2.Visible = false;
-            btnMakeChanges.Visible = true;
         }
 
 
@@ -652,14 +643,100 @@ namespace Municipality_Service_Request_Management_System_X
 
         private void btnMakeChanges_Click(object sender, EventArgs e)
         {
-            btnSubmit.Visible = false;
+            btnConfirm.Visible = false;
+            btnSubmit.Visible = true;
             btnMakeChanges.Visible = false;
             pnlSampleReport.Visible = false;
             pnlContainer.Visible = false;
             pnlContainer2.Visible = true;
+            btnContinue.Visible = false;
+            btnPrevious.Visible = true;
+            lblInstruct.Text = "Enter details on the provided fields.The options that are written 'optional' are not compulsory.";
+            progressBar.Value = 65;
+        }
+        private void Details()
+        {
+
+            if (!string.IsNullOrEmpty(tbxStreetAddress.Text)
+                && !string.IsNullOrEmpty(tbxNearestLandmark.Text)
+                && !string.IsNullOrEmpty(tbxTownName.Text)
+                && (rbtEmergency1.Checked || rbtEmergency2.Checked)
+                && (rbtReoccuring1.Checked || rbtReoccuring2.Checked || rbtReoccuring3.Checked)
+                && (rbtNoAccess.Checked || rbtYesAccess.Checked))
+            {
+                lblInstruct.Text = "If you are satisfied with the details of your request, press Confirm.";
+                pnlSampleReport.Visible = true;
+                pnlContainer.Visible = false;
+                pnlContainer2.Visible = false;
+                btnMakeChanges.Visible = true;
+                btnConfirm.Visible = true;
+                btnSubmit.Visible = false;
+                btnMakeChanges.Visible = true;
+                btnPrevious.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Please fill in all required fields.");
+                return;
+            }
+        }
+        private void progress()
+        {
+
+            if (!string.IsNullOrEmpty(tbxStreetAddress.Text)) { progressBar.Value += 10; }
+            if (!string.IsNullOrEmpty(tbxNearestLandmark.Text)) { progressBar.Value += 0; }
+            if (!string.IsNullOrEmpty(tbxTownName.Text)) { progressBar.Value += 10; }
+            if (rbtEmergency1.Checked || rbtEmergency2.Checked) { progressBar.Value += 10; }
+            if (rbtReoccuring1.Checked || rbtReoccuring2.Checked || rbtReoccuring3.Checked) { progressBar.Value += 10; }
+            if (rbtNoAccess.Checked || rbtYesAccess.Checked) { progressBar.Value += 17; }
+
+
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            // 2. Define where to save the text files (e.g., a folder on the C: drive)
+            string saveFolder = @"C:\Users\User\Desktop\Photon Developers\Municipality Service Request Management System X\Requests";
+
+            // 3. Create the generator and save the file
+            try
+            {
+                RequestFileGenerator generator = new RequestFileGenerator(saveFolder);
+                generator.SaveRequestToFile(_currentRequest);
+
+                MessageBox.Show($"Request saved successfully!\n\nOpen this folder to view it:\n{saveFolder}", "Success");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Saving");
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "Images|*.jpg;*.png;*.jpeg";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    _currentRequest.PhotoFilePath = ofd.FileName;
+                    pbxQuery.ImageLocation = _currentRequest.PhotoFilePath;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An error occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pnlContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
-
 }
+
  
 

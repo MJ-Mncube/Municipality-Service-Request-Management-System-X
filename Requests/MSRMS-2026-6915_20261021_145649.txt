@@ -1,0 +1,39 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-6915
+DATE LOGGED:		21 Oct 2026, 14:56
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		hgsdbsbd
+SUBURB:			sdsdsdsd
+NEAREST LANDMARK:	dsdsdsdsd
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Water, Environment, Sanitation and Waste
+ISSUE TYPE:		Contaminated WaterTree Maintenanceashasas
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[14:56] 	Request Logged       | COMPLETE
+[23 Oct, 14:56] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+PHOTO ATTACHED:	
+
+==========================================================
+                END OF REPORT                             
+==========================================================

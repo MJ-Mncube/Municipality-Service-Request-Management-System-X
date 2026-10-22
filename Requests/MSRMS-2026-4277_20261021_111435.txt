@@ -1,0 +1,38 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-4277
+DATE LOGGED:		21 Oct 2026, 11:14
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		jhggj
+SUBURB:			hghgfgh
+NEAREST LANDMARK:	hjgjgghjg
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Sanitation and Waste
+ISSUE TYPE:		Damaged Manhole Cover
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[11:14] 	Request Logged       | COMPLETE
+[23 Oct, 11:14] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+
+==========================================================
+                END OF REPORT                             
+==========================================================

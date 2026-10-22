@@ -208,6 +208,7 @@
             Controls.Add(pictureBox1);
             Name = "formUsers";
             Text = "Users";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

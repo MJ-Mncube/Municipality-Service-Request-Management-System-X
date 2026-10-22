@@ -25,9 +25,10 @@ namespace Municipality_Service_Request_Management_System_X
 
             public string Category { get; set; }
             public string IssueType { get; set; }
-         
 
-            public List<TimelineEvent> Timeline { get; set; } = new List<TimelineEvent>();
+        public string PhotoFilePath { get; set; }
+
+        public List<TimelineEvent> Timeline { get; set; } = new List<TimelineEvent>();
     }
 
         public class TimelineEvent

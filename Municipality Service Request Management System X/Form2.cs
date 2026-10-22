@@ -295,13 +295,13 @@ namespace Municipality_Service_Request_Management_System_X
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (tbxPassword.PasswordChar == '\0')
+            if (tbxPass1.PasswordChar == '\0')
             {
-                tbxPassword.PasswordChar = '●';
+                tbxPass1.PasswordChar = '●';
             }
-            else if (tbxPassword.PasswordChar == '●')
+            else if (tbxPass1.PasswordChar == '●')
             {
-                tbxPassword.PasswordChar = '\0';
+                tbxPass1.PasswordChar = '\0';
             }
         }
     }

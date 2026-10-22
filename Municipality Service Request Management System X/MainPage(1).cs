@@ -54,6 +54,8 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 request.Activate();
             }
+            lblSouth.Text = "New Request";
+            sidebar.Width = 41;
         }
         private void request_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -118,6 +120,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 dashboard.Activate();
             }
+            lblSouth.Text = "Dashboard";
         }
 
         private void Dashboard_FormClosed(object? sender, FormClosedEventArgs e)
@@ -185,6 +188,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 sampleReport.Activate();
             }
+            lblSouth.Text = "Request Report";
         }
         private void SampleReport_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -205,6 +209,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 statusTracking.Activate();
             }
+            lblSouth.Text = "Request Status Tracking";
         }
         private void StatusTracking_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -225,6 +230,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 chatbot.Activate();
             }
+            lblSouth.Text = "Chatbot";
 
         }
         private void Chatbot_FormClosed(object? sender, FormClosedEventArgs e)
@@ -246,6 +252,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 settings.Activate();
             }
+            lblSouth.Text = "Settings";
         }
         private void Settings_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -266,6 +273,7 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 feedback.Activate();
             }
+            lblSouth.Text = "Feedback";
         }
         private void Feedback_FormClosed(object? sender, FormClosedEventArgs e)
         {
