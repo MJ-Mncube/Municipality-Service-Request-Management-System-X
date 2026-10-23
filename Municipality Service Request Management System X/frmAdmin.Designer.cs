@@ -69,7 +69,7 @@
             label2 = new Label();
             panel1 = new Panel();
             label1 = new Label();
-            tabPage2 = new TabPage();
+            tpRequest = new TabPage();
             tbcAdmin.SuspendLayout();
             tpUsers.SuspendLayout();
             panel4.SuspendLayout();
@@ -82,7 +82,7 @@
             // tbcAdmin
             // 
             tbcAdmin.Controls.Add(tpUsers);
-            tbcAdmin.Controls.Add(tabPage2);
+            tbcAdmin.Controls.Add(tpRequest);
             tbcAdmin.Dock = DockStyle.Fill;
             tbcAdmin.Location = new Point(0, 0);
             tbcAdmin.Name = "tbcAdmin";
@@ -521,15 +521,15 @@
             label1.TabIndex = 0;
             label1.Text = "User Managment";
             // 
-            // tabPage2
+            // tpRequest
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1362, 650);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tpRequest.Location = new Point(4, 24);
+            tpRequest.Name = "tpRequest";
+            tpRequest.Padding = new Padding(3);
+            tpRequest.Size = new Size(1362, 650);
+            tpRequest.TabIndex = 1;
+            tpRequest.Text = "REQUEST";
+            tpRequest.UseVisualStyleBackColor = true;
             // 
             // frmAdmin
             // 
@@ -539,6 +539,7 @@
             Controls.Add(tbcAdmin);
             Name = "frmAdmin";
             Text = "frmAdmin";
+            WindowState = FormWindowState.Maximized;
             tbcAdmin.ResumeLayout(false);
             tpUsers.ResumeLayout(false);
             tpUsers.PerformLayout();
@@ -559,7 +560,7 @@
         private TabPage tpUsers;
         private Panel panel2;
         private Panel panel1;
-        private TabPage tabPage2;
+        private TabPage tpRequest;
         private Label label1;
         private Button btnAdd;
         private Label label2;
