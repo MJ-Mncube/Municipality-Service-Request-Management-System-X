@@ -683,12 +683,26 @@ namespace Municipality_Service_Request_Management_System_X
         private void progress()
         {
 
-            if (!string.IsNullOrEmpty(tbxStreetAddress.Text)) { progressBar.Value += 10; }
-            if (!string.IsNullOrEmpty(tbxNearestLandmark.Text)) { progressBar.Value += 0; }
-            if (!string.IsNullOrEmpty(tbxTownName.Text)) { progressBar.Value += 10; }
-            if (rbtEmergency1.Checked || rbtEmergency2.Checked) { progressBar.Value += 10; }
-            if (rbtReoccuring1.Checked || rbtReoccuring2.Checked || rbtReoccuring3.Checked) { progressBar.Value += 10; }
-            if (rbtNoAccess.Checked || rbtYesAccess.Checked) { progressBar.Value += 17; }
+            // 1. Start with the base 33 points from the first page (Issue Selection)
+            // If you have a variable tracking this, use that. Otherwise, hardcode 33.
+            int progress = 33;
+
+            // 2. Add points based on the current state of the form
+            if (!string.IsNullOrEmpty(tbxStreetAddress.Text)) { progress += 10; }
+            if (!string.IsNullOrEmpty(tbxNearestLandmark.Text)) { progress += 10; }
+            if (!string.IsNullOrEmpty(tbxTownName.Text)) { progress += 10; }
+            if (rbtEmergency1.Checked || rbtEmergency2.Checked) { progress += 10; }
+            if (rbtReoccuring1.Checked || rbtReoccuring2.Checked || rbtReoccuring3.Checked) { progress += 10; }
+            if (rbtNoAccess.Checked || rbtYesAccess.Checked) { progress += 17; }
+
+            // 3. Safety check: Make sure it never goes over 100
+            if (progress > 100)
+            {
+                progress = 100;
+            }
+
+            // 4. Assign the final calculated number to the ProgressBar
+            progressBar.Value = progress;
 
 
 
@@ -711,6 +725,8 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 MessageBox.Show(ex.Message, "Error Saving");
             }
+            btnMakeChanges.Visible = false;
+            pnlDone.Visible = true;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

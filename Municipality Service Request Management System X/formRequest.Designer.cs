@@ -151,6 +151,8 @@
             btnSubmit = new Button();
             btnMakeChanges = new Button();
             btnConfirm = new Button();
+            pnlDone = new Panel();
+            pictureBox11 = new PictureBox();
             pnlContainer.SuspendLayout();
             panel17.SuspendLayout();
             panel19.SuspendLayout();
@@ -187,6 +189,8 @@
             panel22.SuspendLayout();
             panel20.SuspendLayout();
             panel1.SuspendLayout();
+            pnlDone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // pnlContainer
@@ -208,7 +212,7 @@
             pnlContainer.Controls.Add(panel2);
             pnlContainer.Location = new Point(24, 94);
             pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1278, 444);
+            pnlContainer.Size = new Size(1278, 465);
             pnlContainer.TabIndex = 3;
             pnlContainer.Paint += pnlContainer_Paint;
             // 
@@ -1632,12 +1636,34 @@
             btnConfirm.Visible = false;
             btnConfirm.Click += button1_Click_2;
             // 
+            // pnlDone
+            // 
+            pnlDone.Controls.Add(pictureBox11);
+            pnlDone.Location = new Point(24, 94);
+            pnlDone.Name = "pnlDone";
+            pnlDone.Size = new Size(1232, 465);
+            pnlDone.TabIndex = 26;
+            pnlDone.Visible = false;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Dock = DockStyle.Fill;
+            pictureBox11.Image = Properties.Resources.Request_Completed_Successfully;
+            pictureBox11.Location = new Point(0, 0);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(1232, 465);
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.TabIndex = 0;
+            pictureBox11.TabStop = false;
+            // 
             // formRequest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1302, 700);
+            Controls.Add(pnlContainer);
+            Controls.Add(pnlDone);
             Controls.Add(btnConfirm);
             Controls.Add(btnMakeChanges);
             Controls.Add(btnSubmit);
@@ -1648,7 +1674,6 @@
             Controls.Add(btnPrevious);
             Controls.Add(btnContinue);
             Controls.Add(label1);
-            Controls.Add(pnlContainer);
             Controls.Add(pnlSampleReport);
             Controls.Add(pnlContainer2);
             FormBorderStyle = FormBorderStyle.None;
@@ -1713,6 +1738,8 @@
             panel20.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            pnlDone.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1841,5 +1868,7 @@
         private Button btnConfirm;
         private LinkLabel linkLabel1;
         private PictureBox pbxQuery;
+        private Panel pnlDone;
+        private PictureBox pictureBox11;
     }
 }

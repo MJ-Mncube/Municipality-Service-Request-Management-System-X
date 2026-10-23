@@ -513,6 +513,16 @@ namespace Municipality_Service_Request_Management_System_X.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Municipal_Service_Welcome_Guide {
+            get {
+                object obj = ResourceManager.GetObject("Municipal Service Welcome Guide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Orange_and_White_Modern_Minimalist_Pitch_Deck_Presentation {
             get {
                 object obj = ResourceManager.GetObject("Orange and White Modern Minimalist Pitch Deck Presentation", resourceCulture);
@@ -636,6 +646,16 @@ namespace Municipality_Service_Request_Management_System_X.Properties {
         internal static System.Drawing.Bitmap rec1 {
             get {
                 object obj = ResourceManager.GetObject("rec1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Request_Completed_Successfully {
+            get {
+                object obj = ResourceManager.GetObject("Request Completed Successfully", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -43,7 +43,17 @@ namespace Municipality_Service_Request_Management_System_X
         private void button3_Click(object sender, EventArgs e)
         {
             string newpass = Interaction.InputBox("Enter your Password", "Welcome back administrator!!");
-
+            if (newpass == "PhotonDevs")
+            {
+                frmAdmin adminPage = new frmAdmin();
+                adminPage.Show();
+                this.Hide();
+                // Proceed with admin actions
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password. Access denied.");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

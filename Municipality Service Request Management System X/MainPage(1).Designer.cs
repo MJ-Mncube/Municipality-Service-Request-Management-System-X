@@ -56,9 +56,10 @@
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             lblSouth = new Label();
             pictureBox3 = new PictureBox();
+            pnlMove = new Panel();
+            pbxMOVE = new PictureBox();
             sidebar.SuspendLayout();
             pnlmenu.SuspendLayout();
             pnlDashboard.SuspendLayout();
@@ -73,8 +74,9 @@
             pnlSettings.SuspendLayout();
             pnlExit.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            pnlMove.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbxMOVE).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -387,24 +389,14 @@
             // panel1
             // 
             panel1.BackColor = Color.Chocolate;
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblSouth);
             panel1.Controls.Add(pictureBox3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(196, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(853, 57);
+            panel1.Size = new Size(968, 57);
             panel1.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.images1;
-            pictureBox1.Location = new Point(905, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(100, 58);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            panel1.Paint += panel1_Paint;
             // 
             // lblSouth
             // 
@@ -426,11 +418,32 @@
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
+            // pnlMove
+            // 
+            pnlMove.Controls.Add(pbxMOVE);
+            pnlMove.Dock = DockStyle.Fill;
+            pnlMove.Location = new Point(196, 57);
+            pnlMove.Name = "pnlMove";
+            pnlMove.Size = new Size(968, 393);
+            pnlMove.TabIndex = 4;
+            // 
+            // pbxMOVE
+            // 
+            pbxMOVE.Dock = DockStyle.Fill;
+            pbxMOVE.Image = Properties.Resources.Municipal_Service_Welcome_Guide;
+            pbxMOVE.Location = new Point(0, 0);
+            pbxMOVE.Name = "pbxMOVE";
+            pbxMOVE.Size = new Size(968, 393);
+            pbxMOVE.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxMOVE.TabIndex = 0;
+            pbxMOVE.TabStop = false;
+            // 
             // MainPage_1_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 450);
+            ClientSize = new Size(1164, 450);
+            Controls.Add(pnlMove);
             Controls.Add(panel1);
             Controls.Add(sidebar);
             IsMdiContainer = true;
@@ -453,8 +466,9 @@
             pnlExit.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            pnlMove.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbxMOVE).EndInit();
             ResumeLayout(false);
         }
 
@@ -488,6 +502,7 @@
         private Panel panel1;
         private PictureBox pictureBox3;
         private Label lblSouth;
-        private PictureBox pictureBox1;
+        private Panel pnlMove;
+        private PictureBox pbxMOVE;
     }
 }

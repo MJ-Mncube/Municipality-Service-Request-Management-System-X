@@ -36,7 +36,7 @@ namespace Municipality_Service_Request_Management_System_X
         }
 
         private void btnPassword_Click(object sender, EventArgs e)
-        {//"Name|Surname|Age|Gender|Race|Email|ID|Phone|Password"
+        {//"UserID|Name|Surname|Age|Gender|Race|Email|ID|Phone|Password"
 
             Highlight();//Highlights empty or invalid fiels
 

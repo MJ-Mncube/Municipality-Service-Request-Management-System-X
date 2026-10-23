@@ -56,6 +56,8 @@ namespace Municipality_Service_Request_Management_System_X
             }
             lblSouth.Text = "New Request";
             sidebar.Width = 41;
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
         }
         private void request_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -121,6 +123,8 @@ namespace Municipality_Service_Request_Management_System_X
                 dashboard.Activate();
             }
             lblSouth.Text = "Dashboard";
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
         }
 
         private void Dashboard_FormClosed(object? sender, FormClosedEventArgs e)
@@ -189,6 +193,8 @@ namespace Municipality_Service_Request_Management_System_X
                 sampleReport.Activate();
             }
             lblSouth.Text = "Request Report";
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
         }
         private void SampleReport_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -210,6 +216,8 @@ namespace Municipality_Service_Request_Management_System_X
                 statusTracking.Activate();
             }
             lblSouth.Text = "Request Status Tracking";
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
         }
         private void StatusTracking_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -231,6 +239,8 @@ namespace Municipality_Service_Request_Management_System_X
                 chatbot.Activate();
             }
             lblSouth.Text = "Chatbot";
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
 
         }
         private void Chatbot_FormClosed(object? sender, FormClosedEventArgs e)
@@ -253,6 +263,8 @@ namespace Municipality_Service_Request_Management_System_X
                 settings.Activate();
             }
             lblSouth.Text = "Settings";
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
         }
         private void Settings_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -273,6 +285,8 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 feedback.Activate();
             }
+            pbxMOVE.Visible = false;
+            pnlMove.Visible = false;
             lblSouth.Text = "Feedback";
         }
         private void Feedback_FormClosed(object? sender, FormClosedEventArgs e)
@@ -284,6 +298,10 @@ namespace Municipality_Service_Request_Management_System_X
         {
 
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

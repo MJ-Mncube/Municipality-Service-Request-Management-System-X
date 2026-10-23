@@ -1,0 +1,39 @@
+==========================================================
+              MUNICIPAL SERVICE REQUEST                   
+==========================================================
+
+REFERENCE NO:		MSRMS-2026-4893
+DATE LOGGED:		22 Oct 2026, 22:20
+STATUS:			Assigned Request
+PRIORITY:		Medium Priority
+
+----------------------------------------------------------
+1. REQUESTER DETAILS
+----------------------------------------------------------
+NAME:			Simamkele Mncube
+CONTACT NO:		0760458770
+
+----------------------------------------------------------
+2. LOCATION DETAILS
+----------------------------------------------------------
+STREET ADDRESS:		hjghg
+SUBURB:			hghjg
+NEAREST LANDMARK:	hjghj
+
+----------------------------------------------------------
+3. ISSUE DETAILS
+----------------------------------------------------------
+CATEGORY:		Health and Social Security
+ISSUE TYPE:		Clinic Service Complaint
+
+----------------------------------------------------------
+4. PROGRESS TIMELINE
+----------------------------------------------------------
+[22:20] 	Request Logged       | COMPLETE
+[24 Oct, 22:20] 	Estimated Completion | PENDING
+[Pending] 	Resolved             | PENDING
+PHOTO ATTACHED:	
+
+==========================================================
+                END OF REPORT                             
+==========================================================
