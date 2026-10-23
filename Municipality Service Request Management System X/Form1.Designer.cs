@@ -152,9 +152,9 @@
             button2.ForeColor = Color.White;
             button2.Image = Properties.Resources.undo;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(54, 641);
+            button2.Location = new Point(51, 641);
             button2.Name = "button2";
-            button2.Size = new Size(144, 41);
+            button2.Size = new Size(129, 41);
             button2.TabIndex = 17;
             button2.Text = "Previous";
             button2.UseVisualStyleBackColor = false;
@@ -267,7 +267,7 @@
             lnkForgotPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnkForgotPassword.LinkBehavior = LinkBehavior.HoverUnderline;
             lnkForgotPassword.LinkColor = Color.Black;
-            lnkForgotPassword.Location = new Point(222, 459);
+            lnkForgotPassword.Location = new Point(224, 462);
             lnkForgotPassword.Name = "lnkForgotPassword";
             lnkForgotPassword.Size = new Size(137, 21);
             lnkForgotPassword.TabIndex = 7;
@@ -329,7 +329,7 @@
             tbxPassword.PasswordChar = '●';
             tbxPassword.Size = new Size(451, 16);
             tbxPassword.TabIndex = 0;
-            tbxPassword.Text = "read";
+            tbxPassword.Text = "Mzilankatha";
             // 
             // panel5
             // 
@@ -340,7 +340,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(503, 49);
             panel5.TabIndex = 5;
-            panel5.Paint += panel5_Paint;
             // 
             // pnlSignalEmail
             // 
@@ -365,12 +364,11 @@
             // 
             tbxEmail.BorderStyle = BorderStyle.None;
             tbxEmail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxEmail.Location = new Point(3, 26);
+            tbxEmail.Location = new Point(0, 26);
             tbxEmail.Name = "tbxEmail";
-            tbxEmail.PlaceholderText = "name@email.com";
-            tbxEmail.Size = new Size(456, 16);
+            tbxEmail.Size = new Size(459, 16);
             tbxEmail.TabIndex = 0;
-            tbxEmail.Text = "sima@gmail.com";
+            tbxEmail.Text = "simamkelemncube@gmail.com";
             // 
             // lblPass
             // 
@@ -477,7 +475,6 @@
             ClientSize = new Size(1198, 732);
             Controls.Add(pnlLoginBackGround);
             Name = "frmLoginPage";
-            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             pnlLoginBackGround.ResumeLayout(false);
             pnlLoginBackGround.PerformLayout();

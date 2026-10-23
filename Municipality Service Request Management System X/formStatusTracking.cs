@@ -15,6 +15,9 @@ namespace Municipality_Service_Request_Management_System_X
         public formStatusTracking()
         {
             InitializeComponent();
+
+            ThemeManager.LoadTheme();
+            ThemeManager.ApplyTheme(this);
         }
     }
 }

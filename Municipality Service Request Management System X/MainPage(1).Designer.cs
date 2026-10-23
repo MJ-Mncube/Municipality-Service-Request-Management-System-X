@@ -57,9 +57,9 @@
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
             lblSouth = new Label();
+            lblIdentify = new Label();
+            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pnlMove = new Panel();
-            pbxMOVE = new PictureBox();
             sidebar.SuspendLayout();
             pnlmenu.SuspendLayout();
             pnlDashboard.SuspendLayout();
@@ -74,9 +74,8 @@
             pnlSettings.SuspendLayout();
             pnlExit.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            pnlMove.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbxMOVE).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -390,24 +389,48 @@
             // 
             panel1.BackColor = Color.Chocolate;
             panel1.Controls.Add(lblSouth);
+            panel1.Controls.Add(lblIdentify);
+            panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(196, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(968, 57);
+            panel1.Size = new Size(751, 57);
             panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
             // 
             // lblSouth
             // 
             lblSouth.AutoSize = true;
             lblSouth.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSouth.ForeColor = Color.White;
-            lblSouth.Location = new Point(75, 18);
+            lblSouth.Location = new Point(139, 18);
             lblSouth.Name = "lblSouth";
-            lblSouth.Size = new Size(137, 28);
+            lblSouth.Size = new Size(193, 28);
             lblSouth.TabIndex = 12;
-            lblSouth.Text = "Main Page";
+            lblSouth.Text = "New Complaint";
+            // 
+            // lblIdentify
+            // 
+            lblIdentify.AutoSize = true;
+            lblIdentify.BackColor = Color.Chocolate;
+            lblIdentify.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblIdentify.ForeColor = Color.White;
+            lblIdentify.Location = new Point(75, 16);
+            lblIdentify.Name = "lblIdentify";
+            lblIdentify.Size = new Size(33, 21);
+            lblIdentify.TabIndex = 4;
+            lblIdentify.Text = "SM";
+            lblIdentify.Click += label1_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.oval__2_;
+            pictureBox4.Location = new Point(62, 6);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(59, 46);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 2;
+            pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -418,38 +441,16 @@
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
-            // pnlMove
-            // 
-            pnlMove.Controls.Add(pbxMOVE);
-            pnlMove.Dock = DockStyle.Fill;
-            pnlMove.Location = new Point(196, 57);
-            pnlMove.Name = "pnlMove";
-            pnlMove.Size = new Size(968, 393);
-            pnlMove.TabIndex = 4;
-            // 
-            // pbxMOVE
-            // 
-            pbxMOVE.Dock = DockStyle.Fill;
-            pbxMOVE.Image = Properties.Resources.Municipal_Service_Welcome_Guide;
-            pbxMOVE.Location = new Point(0, 0);
-            pbxMOVE.Name = "pbxMOVE";
-            pbxMOVE.Size = new Size(968, 393);
-            pbxMOVE.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbxMOVE.TabIndex = 0;
-            pbxMOVE.TabStop = false;
-            // 
             // MainPage_1_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1164, 450);
-            Controls.Add(pnlMove);
+            ClientSize = new Size(947, 450);
             Controls.Add(panel1);
             Controls.Add(sidebar);
             IsMdiContainer = true;
             Name = "MainPage_1_";
             Text = "Municipality Service Request Management System";
-            WindowState = FormWindowState.Maximized;
             Load += MainPage_1__Load;
             sidebar.ResumeLayout(false);
             pnlmenu.ResumeLayout(false);
@@ -466,9 +467,8 @@
             pnlExit.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            pnlMove.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbxMOVE).EndInit();
             ResumeLayout(false);
         }
 
@@ -500,9 +500,9 @@
         private Button btnHam;
         private System.Windows.Forms.Timer sidebarTransition;
         private Panel panel1;
+        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
+        public Label lblIdentify;//CHANGED TO PUBLIC SO THAT IT CAN BE ACCESSED FROM OTHER FORMS
         private Label lblSouth;
-        private Panel pnlMove;
-        private PictureBox pbxMOVE;
     }
 }

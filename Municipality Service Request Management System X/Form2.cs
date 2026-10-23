@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,14 @@ namespace Municipality_Service_Request_Management_System_X
         private clsVerify objVerify = new clsVerify();
 
         //Path to textfile
-        string filepath = @"C:\Users\User\Documents\Lagash ltd\Residents.txt";
+        //Path to textfile
+        string filepath = Path.Combine(Application.StartupPath, "Residents.txt");
         public frmSignUp()
         {
             InitializeComponent();
+
+            ThemeManager.LoadTheme();
+            ThemeManager.ApplyTheme(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -33,6 +38,7 @@ namespace Municipality_Service_Request_Management_System_X
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
+
         }
 
         private void btnPassword_Click(object sender, EventArgs e)
@@ -50,66 +56,13 @@ namespace Municipality_Service_Request_Management_System_X
             string gender = objVerify.GenderID((IDDigits));
             //Race
             string race = objVerify.raceID((IDDigits));
+            MessageBox.Show("Age:" + age + "\nGender:" + gender + "\nRace:" + race);
 
 
+            //Changed entry of ID into string because the ID number is too long to be stored as an integer
 
-            //Checking if the number, email and ID are already save to the textfile
-
-            //"Name|Surname|Age|Gender|Race|Email|ID|Phone|Password"
-
-            if (!File.Exists(filepath))
-            {
-                MessageBox.Show("File not found");
-                return;
-            }
-            string line = "";
-            string[] lineArray = new string[10];
-            string email = "";
-            string ID = "";
-            string Number = "";
-
-            string inputEmail = tbxEmail.Text;
-            string inputNumber = tbxPhone.Text;
-            string inputID = tbxID.Text;
-
-            bool bfound = false;
-
-
-            StreamReader reader = new StreamReader(filepath);
-            using (reader)
-            {
-                line = reader.ReadLine();
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    lineArray = line.Split('|');
-                    if (lineArray.Length < 10)
-                    {
-                        line = reader.ReadLine();
-                        continue;
-                    }
-                    email = lineArray[6];
-                    ID = lineArray[7];
-                    Number = lineArray[8];
-
-
-                    if (ID.Equals(inputID) || Number.Equals(inputNumber) || email.Equals(inputEmail))
-                    {
-                        MessageBox.Show("Email, ID or Phone number already exists. Please use different credentials.");
-                        bfound = true;
-                        return;
-                    }
-                    else { bfound = false; }
-
-                }
-
-            }
             ///////Writing account to texftile
-            if (tbxPass1.Text != tbxPassword.Text)
-            {
-                lblWpassword.Text = "Passwords do not match";
-                return;
-            }
+
             //1.Checking if all fields are filled
             if (objVerify.emptyCheck(tbxname.Text) == ""
                 && objVerify.emptyCheck(tbxSurname.Text) == ""
@@ -117,16 +70,8 @@ namespace Municipality_Service_Request_Management_System_X
                 && objVerify.VerifyID(tbxID.Text) == ""
                 && objVerify.VerifyPhone(tbxPhone.Text) == ""
                 && objVerify.emptyCheck(tbxPassword.Text) == ""
-                && objVerify.emptyCheck(tbxPass1.Text) == ""
                 && cmbxGender.SelectedIndex != -1)
             {
-                //2.Writing to textfiles
-
-                if (!File.Exists(filepath))
-                {
-                    MessageBox.Show("File does not exist.");
-                    return;
-                }
                 //generating user ID
                 string userID = tbxname.Text.Substring(0, 1) +
                     tbxSurname.Text.Substring(0, 1) +
@@ -151,11 +96,11 @@ namespace Municipality_Service_Request_Management_System_X
                 MessageBox.Show("Account created successfully!");
 
                 //Writing user initials
-                MainPage_1_ mainpage = new MainPage_1_();
+                MainPage_1_ mainpage = new MainPage_1_(tbxEmail.Text);
 
-                // mainpage.lblIdentify.Text = tbxname.Text.Substring(0, 1).ToUpper() + tbxSurname.Text.Substring(0, 1).ToUpper();
+                mainpage.lblIdentify.Text = tbxname.Text.Substring(0, 1).ToUpper()
+                    + tbxSurname.Text.Substring(0, 1).ToUpper();
 
-                //clear textbox
                 tbxEmail.Clear();
                 tbxID.Clear();
                 tbxname.Clear();
@@ -167,7 +112,10 @@ namespace Municipality_Service_Request_Management_System_X
                 frmLoginPage frmLoginPage = new frmLoginPage();
                 frmLoginPage.Show();
                 this.Hide();
+
+              
             }
+
         }
         private void HighlightFunction()
         {
@@ -244,16 +192,6 @@ namespace Municipality_Service_Request_Management_System_X
                 pnlPassword.BackColor = Color.Red;
                 lblWpassword.Text = "Enter Password";
             }
-            if (objVerify.emptyCheck(tbxPass1.Text) == "")//
-            {
-                pnlPass1.BackColor = Color.Green;
-                lblwarnPass1.Text = "";
-            }
-            else
-            {
-                pnlPass1.BackColor = Color.Red;
-                lblwarnPass1.Text = "Enter Password";
-            }
 
         }
 
@@ -274,35 +212,6 @@ namespace Municipality_Service_Request_Management_System_X
             frmLoginPage frmLoginPage = new frmLoginPage();
             frmLoginPage.Show();
             this.Hide();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            string IDDigits = tbxID.Text;
-            //Age
-            int age = objVerify.AgeID((IDDigits));
-            //gender
-            string gender = objVerify.GenderID((IDDigits));
-            //Race
-            string race = objVerify.raceID((IDDigits));
-            MessageBox.Show("Age:" + age + "\nGender:" + gender + "\nRace:" + race);
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            if (tbxPass1.PasswordChar == '\0')
-            {
-                tbxPass1.PasswordChar = '●';
-            }
-            else if (tbxPass1.PasswordChar == '●')
-            {
-                tbxPass1.PasswordChar = '\0';
-            }
         }
     }
 }

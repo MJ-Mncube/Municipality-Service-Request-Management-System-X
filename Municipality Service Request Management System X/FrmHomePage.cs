@@ -15,6 +15,9 @@ namespace Municipality_Service_Request_Management_System_X
         public FrmHomePage()
         {
             InitializeComponent();
+
+            ThemeManager.LoadTheme();
+            ThemeManager.ApplyTheme(this);
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)

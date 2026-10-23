@@ -22,16 +22,25 @@ namespace Municipality_Service_Request_Management_System_X
         formSampleReport sampleReport;
         formSettings settings;
 
-        public MainPage_1_()
+
+        private string residentEmail;
+        public MainPage_1_(string email)
+
         {
             InitializeComponent();
+
+
+            ThemeManager.LoadTheme();
+            ThemeManager.ApplyTheme(this);
+
+            residentEmail = email;
+
+            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmLoginPage MainPage = new frmLoginPage();
-            MainPage.Show();
-            this.Hide();
 
         }
 
@@ -54,10 +63,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 request.Activate();
             }
-            lblSouth.Text = "New Request";
-            sidebar.Width = 41;
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
         }
         private void request_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -122,9 +127,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 dashboard.Activate();
             }
-            lblSouth.Text = "Dashboard";
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
         }
 
         private void Dashboard_FormClosed(object? sender, FormClosedEventArgs e)
@@ -192,9 +194,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 sampleReport.Activate();
             }
-            lblSouth.Text = "Request Report";
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
         }
         private void SampleReport_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -215,9 +214,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 statusTracking.Activate();
             }
-            lblSouth.Text = "Request Status Tracking";
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
         }
         private void StatusTracking_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -238,9 +234,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 chatbot.Activate();
             }
-            lblSouth.Text = "Chatbot";
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
 
         }
         private void Chatbot_FormClosed(object? sender, FormClosedEventArgs e)
@@ -252,7 +245,7 @@ namespace Municipality_Service_Request_Management_System_X
         {
             if (settings == null)
             {
-                settings = new formSettings();
+                settings = new formSettings(residentEmail);
                 settings.FormClosed += Settings_FormClosed;
                 settings.MdiParent = this;
                 settings.Dock = DockStyle.Fill;
@@ -262,9 +255,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 settings.Activate();
             }
-            lblSouth.Text = "Settings";
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
         }
         private void Settings_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -285,9 +275,6 @@ namespace Municipality_Service_Request_Management_System_X
             {
                 feedback.Activate();
             }
-            pbxMOVE.Visible = false;
-            pnlMove.Visible = false;
-            lblSouth.Text = "Feedback";
         }
         private void Feedback_FormClosed(object? sender, FormClosedEventArgs e)
         {
@@ -295,11 +282,6 @@ namespace Municipality_Service_Request_Management_System_X
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
